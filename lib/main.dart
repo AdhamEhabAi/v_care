@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:v_care/features/authentication/presentation/views/register_view.dart';
+import 'package:v_care/features/results/presentation/views/results_view.dart';
 import 'package:v_care/generated/l10n.dart';
 
 void main() {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         Locale('ar', 'AE'),
       ],
       debugShowCheckedModeBanner: false,
-      home: RegisterView(),
+      home: ResultsView(),
     );
   }
 }

@@ -5,5 +5,5 @@ abstract class AppColors{
 }
 
 abstract class AppPadding{
-  static const double padding = 16;
+  static const double padding = 20;
 }

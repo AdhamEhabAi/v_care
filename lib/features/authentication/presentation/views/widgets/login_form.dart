@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:v_care/constants.dart';
+import 'package:v_care/core/utils/styles.dart';
 import 'package:v_care/core/widgets/custom_button.dart';
 import 'package:v_care/features/authentication/presentation/views/widgets/custom_text_field.dart';
 
@@ -74,7 +75,7 @@ class _LoginFormState extends State<LoginForm> {
             const SizedBox(
               height: 30,
             ),
-            CustomButton(text: 'تسجيل الدخول', onPressed: () {}),
+            CustomButton(text: const Text('تسجيل الدخول',style: Styles.bold14_8,),  onPressed: () {}),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12.0),
               child: Row(
@@ -98,7 +99,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
             CustomButton(
-                text: 'المتابعه عن طريق جوجل',
+                text: const Text('المتابعه عن طريق جوجل',style: Styles.bold14_8,),
                 onPressed: () {},
                 backGroundColor: Colors.grey.withOpacity(.5)),
           ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:v_care/constants.dart';
+import 'package:v_care/core/utils/styles.dart';
 import 'package:v_care/core/widgets/custom_button.dart';
 
 class EntryView extends StatelessWidget {
@@ -24,9 +25,9 @@ class EntryView extends StatelessWidget {
               ),
               Column(
                 children: [
-                  CustomButton(text: 'تسجيل الدخول', onPressed: () { },backGroundColor: Colors.blueGrey,),
+                  CustomButton(text: const Text('تسجيل الدخول',style: Styles.bold14_8,),  onPressed: () { },backGroundColor: Colors.blueGrey,),
                   const SizedBox(height: 20,),
-                  CustomButton(text: 'مستخدم جديد', onPressed: () { },backGroundColor: Colors.blueGrey,),
+                  CustomButton(text: const Text('مستخدم جديد',style: Styles.bold14_8,), onPressed: () { },backGroundColor: Colors.blueGrey,),
                   const SizedBox(height: 20,),
 
                 ],

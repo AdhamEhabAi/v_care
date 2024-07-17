@@ -31,6 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_intl:
+  pinput: ^5.0.0
+  flutter_bloc: ^8.1.6
   flutter_localizations:
     sdk: flutter
 

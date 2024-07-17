@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:v_care/constants.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField(
+  const CustomTextField(
       {this.controller,
       this.validator,
       super.key,
@@ -13,15 +13,15 @@ class CustomTextField extends StatelessWidget {
       this.onChanged,
       this.obsecureText = false,
       this.textInputType});
-  String? labelText;
-  String? hintText;
-  FormFieldValidator<String>? validator;
-  Function(String)? onChanged;
-  Widget? prefix;
-  Widget? suffix;
-  bool obsecureText;
-  TextEditingController? controller = TextEditingController();
-  TextInputType? textInputType;
+  final String? labelText;
+  final String? hintText;
+  final FormFieldValidator<String>? validator;
+  final Function(String)? onChanged;
+  final Widget? prefix;
+  final Widget? suffix;
+  final bool obsecureText;
+  final TextEditingController? controller ;
+  final TextInputType? textInputType;
 
   @override
   Widget build(BuildContext context) {
