@@ -7,11 +7,13 @@ class ResultCubit extends Cubit<ResultState> {
   ResultCubit() : super(ResultInitial());
   bool isComp = false;
 
-  void switchComplete(){
+  void switchComplete() {
     isComp = !isComp;
     emit(ResultSwitched());
   }
 
-
-
+  void onPageChanged(int index) {
+    isComp = index != 1;
+    emit(ResultPageChanged(isComp));
+  }
 }

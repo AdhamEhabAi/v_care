@@ -18,56 +18,55 @@ class ResultsView extends StatelessWidget {
 
     final PageController pageController = PageController(initialPage: 1);
 
-    return BlocProvider(
-      create: (context) => ResultCubit(),
-      child: SafeArea(
-        child: Scaffold(
-          appBar: CustomAppBar(title: 'النتائج',onPressed: (){}),
-          body: Column(
-            children: [
-              BlocBuilder<ResultCubit, ResultState>(
-                builder: (context, state) {
-                  bool isSelected =
-                      BlocProvider.of<ResultCubit>(context).isComp;
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 29.0, vertical: 11.0),
-                    child: CompleteOrNotWidget(
-                      containerWidth: containerWidth,
-                      isSelected: isSelected,
-                      halfWidth: halfWidth,
-                      onSwitch: (bool isSelected) {
-                        pageController.animateToPage(
-                          isSelected ? 1 : 0,
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeInOut,
-                        );
-
-                      },
-                    ),
-                  );
+    return SafeArea(
+      child: Scaffold(
+        appBar: CustomAppBar(title: 'النتائج', onPressed: () {}),
+        body: Column(
+          children: [
+            BlocBuilder<ResultCubit, ResultState>(
+              builder: (context, state) {
+                bool isSelected = (state is ResultPageChanged)
+                    ? state.isComp
+                    : context.read<ResultCubit>().isComp;
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 29.0, vertical: 11.0),
+                  child: CompleteOrNotWidget(
+                    containerWidth: containerWidth,
+                    isSelected: isSelected,
+                    halfWidth: halfWidth,
+                    onSwitch: (bool isSelected) {
+                      pageController.animateToPage(
+                        isSelected ? 1 : 0,
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeInOut,
+                      );
+                      context.read<ResultCubit>().switchComplete();
+                    },
+                  ),
+                );
+              },
+            ),
+            const SortingWidgets(),
+            const SizedBox(
+              height: 10,
+            ),
+            Expanded(
+              child: PageView(
+                controller: pageController,
+                onPageChanged: (index) {
+                  context.read<ResultCubit>().onPageChanged(index);
                 },
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  CompletedBody(),
+                  UnCompletedBody(),
+                ],
               ),
-              const SortingWidgets(),
-              const SizedBox(
-                height: 10,
-              ),
-              Expanded(
-                child: PageView(
-                  controller: pageController,
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    CompletedBody(),
-                    UnCompletedBody(),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
-
-

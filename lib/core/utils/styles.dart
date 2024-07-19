@@ -42,6 +42,11 @@ abstract class Styles{
     fontWeight: FontWeight.w600,
     fontSize: 9.25,
   );
+  static const TextStyle semiBold10 = TextStyle(
+    fontFamily: 'Cairo',
+    fontWeight: FontWeight.w600,
+    fontSize: 10,
+  );
   static const TextStyle bold14 = TextStyle(
     fontFamily: 'Cairo',
     fontWeight: FontWeight.bold,
@@ -80,6 +85,6 @@ abstract class Styles{
   static const TextStyle bold20 = TextStyle(
     fontFamily: 'Cairo',
     fontWeight: FontWeight.bold,
-    fontSize: 14,
+    fontSize: 20,
   );
 }

@@ -1,11 +1,14 @@
 part of 'result_cubit.dart';
 
 @immutable
-sealed class ResultState {}
+abstract class ResultState {}
 
-final class ResultInitial extends ResultState {}
+class ResultInitial extends ResultState {}
 
-final class ResultSwitched extends ResultState {}
+class ResultSwitched extends ResultState {}
 
+class ResultPageChanged extends ResultState {
+  final bool isComp;
 
-
+  ResultPageChanged(this.isComp);
+}

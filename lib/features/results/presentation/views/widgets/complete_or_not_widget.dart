@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:v_care/constants.dart';
 import 'package:v_care/core/utils/styles.dart';
-import 'package:v_care/features/results/presentation/manager/result_cubit.dart';
 
 class CompleteOrNotWidget extends StatelessWidget {
   const CompleteOrNotWidget({
@@ -51,8 +49,8 @@ class CompleteOrNotWidget extends StatelessWidget {
           left: isSelected ? halfWidth - 10 : 0,
           top: 0,
           bottom: 0,
-          duration: const Duration(seconds: 1),
-          curve: Curves.fastOutSlowIn,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
           child: Padding(
             padding: const EdgeInsets.all(5.0),
             child: Container(
@@ -71,7 +69,6 @@ class CompleteOrNotWidget extends StatelessWidget {
           right: 0,
           child: InkWell(
             onTap: () {
-              BlocProvider.of<ResultCubit>(context).switchComplete();
               onSwitch(isSelected);
             },
             child: Row(
