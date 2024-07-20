@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:v_care/features/authentication/presentation/views/widgets/Register_form.dart';
+import 'package:v_care/features/authentication/presentation/views/widgets/register_form.dart';
 import 'package:v_care/features/authentication/presentation/views/widgets/upper_container_widget.dart';
 
 class RegisterViewBody extends StatelessWidget {

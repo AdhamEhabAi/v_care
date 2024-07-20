@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:v_care/features/patient_history/presentation/views/patient_history_view.dart';
 import 'package:v_care/features/results/presentation/manager/result_cubit.dart';
+import 'package:v_care/features/user_data_editing/presentation/views/edit_patient_info_view.dart';
 import 'package:v_care/generated/l10n.dart';
 
 void main() {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           Locale('ar', 'AE'),
         ],
         debugShowCheckedModeBanner: false,
-        home: PatientHistoryView(),
+        home: EditPatientInfoView(),
       ),
     );
   }

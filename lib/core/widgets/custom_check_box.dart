@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:v_care/core/utils/styles.dart';
 
 class CustomCheckBox extends StatelessWidget {
   const CustomCheckBox({
@@ -18,7 +19,7 @@ class CustomCheckBox extends StatelessWidget {
       children: [
         Text(
           text,
-          style: const TextStyle(fontSize: 18),
+          style: Styles.semiBold14,
         ),
         Checkbox(
           value: isChecked,

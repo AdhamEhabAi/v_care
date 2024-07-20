@@ -4,13 +4,18 @@ import 'package:v_care/core/utils/styles.dart';
 class InfoTextField extends StatelessWidget {
   const InfoTextField({
     super.key,
-    required TextEditingController heightController, required this.hintText, this.width = 176, this.textInputType = TextInputType.number,
+    required TextEditingController heightController,
+    required this.hintText,
+    this.width = 176,
+    this.textInputType = TextInputType.number,
+    this.textStyle = Styles.semiBold9_25,
   }) : textEditingController = heightController;
 
   final TextEditingController textEditingController;
   final String hintText;
   final double width;
   final TextInputType textInputType;
+  final TextStyle textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +28,15 @@ class InfoTextField extends StatelessWidget {
       child: Center(
         child: TextField(
           controller: textEditingController,
-          style: Styles.semiBold9_25,
+          style: textStyle,
           keyboardType: textInputType,
           textAlign: TextAlign.center,
           decoration: InputDecoration(
             hintText: hintText,
             hintStyle: Styles.semiBold10,
             border: InputBorder.none,
-            contentPadding: const EdgeInsets.only(bottom: 14.0), // Ensure this matches your font size
+            contentPadding: const EdgeInsets.only(
+                bottom: 14.0), // Ensure this matches your font size
           ),
         ),
       ),

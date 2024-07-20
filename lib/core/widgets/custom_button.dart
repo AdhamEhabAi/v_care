@@ -16,14 +16,17 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      // height: 54,
+
       child: TextButton(
           onPressed: onPressed,
           style: TextButton.styleFrom(
               backgroundColor: backGroundColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(6.15))),
-          child: text),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6.0),
+            child: text,
+          )),
     );
   }
 }

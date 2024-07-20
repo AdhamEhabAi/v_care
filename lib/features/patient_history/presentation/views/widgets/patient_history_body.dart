@@ -87,7 +87,7 @@ class PatientHistoryBody extends StatelessWidget {
               ),
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 20.0, horizontal: 36),
+                    const EdgeInsets.symmetric(vertical: 20.0, horizontal: 24),
                 child: Column(
                   children: [
                     const Text(
@@ -127,7 +127,7 @@ class PatientHistoryBody extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   vertical: 20.0,
-                  horizontal: 36,
+                  horizontal: 24,
                 ),
                 child: Column(
                   children: [

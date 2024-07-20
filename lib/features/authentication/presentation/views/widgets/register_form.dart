@@ -20,10 +20,10 @@ class _RegisterFormState extends State<RegisterForm> {
       child: Form(
         child: Column(
           children: [
-            CustomTextField(
+            const CustomTextField(
               hintText: 'ادخل بريدك الالكتروني',
               labelText: 'البريد الالكتروني',
-              prefix: const Icon(Icons.email),
+              prefix: Icon(Icons.email),
               textInputType: TextInputType.emailAddress,
             ),
             const SizedBox(
